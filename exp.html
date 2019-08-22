@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Binary Search Trees</title>
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+        <meta charset="utf-8"/>
+        <style>
+         .exp {
+             display : none;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="exp" title="Binary Search Tree">
+            <div class="longt" >
+                <h1 class="hlongt">Introduction to Binary Search Tree</h1>
+            </div>
+
+            <div class="preamble">
+                <div class="art txt" title="Estimation">
+                    <div class="longt">
+                        <h2 class="hlongt">Estimated Time</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>1 hour</p>
+                    </div>
+                </div>
+                <div class="art txt" title="Motivation">
+                    <div class="longt">
+                        <h2 class="hlongt">Motivation</h2>
+                    </div>
+                    <div class="art-body">
+                        <i>For large amounts of input, the linear access time of linked lists is prohibitive</i> – weiss
+                    </div>
+                </div>
+                <div class="art txt" title="Prerequisites">
+                    <div class="longt">
+                        <h2 class="hlongt">Prerequisites of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        <ul>
+                            <li>Basic knowledge of <a href="http://10.4.12.203/bst/artefacts/build/code/static/videos/BinaryTree.mp4">trees (data structure), and binary trees</a> in particular.</li>
+                            <li>Familiarity with programming concepts such as <a href="http://10.4.12.203/bst/artefacts/build/code/static/videos/Pointers%20and%20Structs.mp4">composite data structures</a>.</li>
+                            <li>Calculation of basic <a href="http://10.4.12.203/bst/artefacts/build/code/static/videos/Complexity.mp4">time and space complexity</a>.</li>
+                            <li>And above all, a curiosity to learn and explore..!</li>
+                        </ul>   
+                        Click on the above links for short videos elaborating each of the concepts.
+                    </div>
+                </div>
+
+                <div class="art txt" title="Overview">
+                    <div class="longt">
+                        <h2 class="hlongt">Overview of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>The experiment features a series
+                           of modules with video lectures,
+                           hands-on practice exercises and
+                           quizzes for self analysis.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="art txt" title="Learning Objectives">
+                    <div class="longt">
+                        <h2 class="hlongt">Learning Objectives of the Experiment</h2>
+                    </div>
+                    <div class="art-body">
+                        <p>In this experiment on Binary search tree, we will learn the following:<br>
+                            <ul>
+                                <li>Structure, representation and Implementation of BST.</li>
+                                <li>Getting acquainted with Terminologies related to trees, Binary trees and BST.</li>
+                                <li>Binary Search Tree property and differences between a binary tree and a binary search tree.</li>
+                                <li>Operations on  BST, their algorithms and time and space complexity analysis.</li>
+                                <li>Uses and relationship with other data structures such as Dictionaries and priority Queues.</li>
+                                <li>Applications of a BST in searching, sorting etc.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="art txt" title="Modules and Weightage">
+                    <div class="longt">
+                        <h2 class="hlongt">Experiment Modules and their Weightage</h2>
+                    </div>
+                    <div class="art-body">
+                        <table> 
+                            <thead>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Weightage</th>
+                                    <th>Expectation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pre-test</td>
+                                    <td>5%</td>
+                                    <td>Solve All Questions</td>
+                                </tr>
+                                <tr>
+                                    <td>Structure and Implementation of BST</td>
+                                    <td>15%</td>
+                                    <td>Answer the Conceptual questions</td>
+                                </tr>
+                                <tr>
+                                    <td>Operations on BST</td>
+                                    <td>30%</td>
+                                    <td>Try all operations with atleast two examples</td>
+                                </tr>
+                                <tr>
+                                    <td>Applications</td>
+                                    <td>25%</td>
+                                    <td>Applying the concept to solve a problem</td>
+                                </tr>
+                                <tr>
+                                    <td>Post-assessment</td>
+                                    <td>25%</td>
+                                    <td>Solve All Questions</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lu" title="Pre-test">
+                <div class="longt" >
+                    <h1 class="hlongt">Pre-test of the Experiment</h1>
+                </div>
+                
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>20 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="art txt" title="Introduction">
+                        <div class="longt">
+                            <h2 class="hlongt">Introduction to Pre-test of the Experiment</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Pretest includes questions on
+                               trees, binary trees,
+                               complexity analysis pointers
+                               and structs. Read the
+                               questions in the quiz section
+                               and select the correct option
+                               from the ones
+                               provided. Please note that
+                               some questions may have more
+                               than one correct response.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="task" title="Pre-test Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">Pre-test Quiz of the Experiment</h2>
+                    </div>
+                    <div class="art txt" title="Question 1">
+                        <div class="longt">
+                            <h2 class="hlongt">Q1: Leaf nodes have no children</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li><b>True</b></li>
+                                    <li>False</li>
+                                </ol>
+                                Leaf nodes are nodes that does not have child nodes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 2">
+                        <div class="longt">
+                            <h2 class="hlongt">Q2: At most how many leaf nodes (L) can be present in a tree of n nodes?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>n</li>
+                                    <li><b>n-1</b></li>
+                                    <li>0</li>
+                                    <li>1</li>
+                                </ol>
+                                Consider a tree with all but root node as children of the root node.
+                                <img src="http://1.bp.blogspot.com/-iehx_RpDD0U/UOVk6bZnklI/AAAAAAAAAMA/Y2yOtq6hIAc/s1600/gate_binary_tree.JPG" alt="Q1 Explanation">
+                            </p>
+                        </div>
+                    </div> <div class="art txt" title="Question 3">
+                        <div class="longt">
+                            <h2 class="hlongt">Q3: What is the time and space complexity of merge sort?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>O(N^2) time, O(N) space</li>
+                                    <li>O(N) time, O(NlogN) space</li>
+                                    <li>O(Nlog N) time, O(NlogN) space</li>
+                                    <li><b>O(Nlog N) time, O(N) space</b></li>
+                                </ol>
+                                *put a link to hosted merge sort experiment*
+                            </p>
+                        </div>
+                    </div> <div class="art txt" title="Question 4">
+                        <div class="longt">
+                            <h2 class="hlongt">Q4: If a
+                                variable is a pointer to a
+                                structure, then which of the
+                                following operator is used
+                                to access data members of
+                                the structure through the
+                                pointer variable?
+                            </h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>.</li>
+                                    <li>&</li>
+                                    <li>*</li>
+                                    <li><b>-></b></li>
+                                </ol>
+                                Pointer is just the address
+                                value, where the variable is
+                                stored. To get the address
+                                value we use "->" . Its just
+                                an representation.
+                            </p>
+                        </div>
+                    </div> <div class="art txt" title="Question 5">
+                        <div class="longt">
+                            <h2 class="hlongt">Q5: Non Primitive data Structures are those which define set of:</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>Static elements</li>
+                                    <li>Primitive elements</li>
+                                    <li><b>Derived elements</b></li>
+                                    <li>None of these</li>
+                                </ol>
+                                The data types that are
+                                derived from primary data
+                                types are known as
+                                non-Primitive data types.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+
+            <div class="lu" title="BST">
+                <div class="longt">
+                    <h2 class="hlongt">Binary Search Trees</h2>    
+                </div>
+                
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>15 minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="art txt" title="Objective">
+                        <div class="longt">
+                            <h2 class="hlongt">Objective</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Welcome to this module on Binary Search Trees!
+                               Here we begin understanding the definition, properties and structure of BST
+                            </p>
+                        </div>
+                    </div>
+                </div>   
+                
+                <div class="task" title="Concept">
+                    <div class="longt">
+                        <h2 class="hlongt">Concept</h2>
+                    </div>
+                    <div class="art txt" title="Picture: Introduction">
+                        <div class="longt">
+                            <h2 class="hlongt">A binary search tree as a special case of a binary tree.</h2>
+                        </div>
+                        <div class="art-body">
+                            <img src="http://10.4.12.203/ms/artefacts/build/code/static/img/binary.png" style="width: 40%" alt="Binary Search trees"></br>
+                            <p>
+                                Notice the relation between
+                                the adjacent node values in
+                                the given <b>Binary Tree</b>.<br>
+                                Observe the relative
+                                ordering between them and
+                                then move on to the formal
+                                definition of a Binary
+                                Search Tree.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="BST Definition">
+                        <div class="longt">
+                            <h2 class="hlongt">Formal Definition of BST</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                A binary search tree is a
+                                rooted <b>binary tree</b>,
+                                whose internal nodes each
+                                store a key (and optionally,
+                                an associated value) and
+                                each have two distinguished
+                                sub-trees, commonly denoted
+                                left and right.  The tree
+                                additionally satisfies the <b>binary
+                                search property</b>,
+                                which states that the key in
+                                each node must be greater
+                                than or equal to any key
+                                stored in the left sub-tree,
+                                and less than or equal to
+                                any key stored in the right
+                                sub-tree.  The leaves (final
+                                nodes) of the tree contain
+                                no key and have no structure
+                                to distinguish them from one
+                                another. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art req" title="Picture: Terminologies">
+                        <div class="longt">
+                            <h2 class="hlongt">Depiction of Terminologies.</h2>
+                        </div>
+                        <div class="art-body">
+                            <img src="./img/terms.png" alt="height-depth of a tree">
+                        </div>
+                    </div>
+                    <div class="art txt" title="Terminologies">
+                        <div class="longt">
+                            <h2 class="hlongt">Terminologies</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ul>
+                                    <li>
+                                        <b>Depth</b>: The
+                                        depth of a node is
+                                        the number of edges
+                                        in the unique path
+                                        from the root to the
+                                        node. Root depth=0
+                                        <br>*Depth of a tree
+                                        is equal to the
+                                        depth of the deepest
+                                        leaf.
+                                    </li>
+                                    <li>
+                                        <b>Height</b>: The
+                                        height of a node is
+                                        the length of the
+                                        longest path from
+                                        node to a leaf. All
+                                        leaves are at height
+                                        0. 
+                                        <br>*The height of a
+                                        tree is equal to the
+                                        height of the root.
+                                        Depth of a tree is
+                                        equal to the height
+                                        of the tree.
+                                    </li>
+                                    <li>
+                                        <b>Ancestor-Descendant</b>:
+                                        If there is a path
+                                        from n1 to n2, then
+                                        n1 is an ancestor of
+                                        n2 and n2 is a
+                                        descendant of n1.
+                                        If n1 = n2, then n1
+                                        is a proper ancestor
+                                        of n2 and n2 is a
+                                        proper descendant of
+                                        n1.
+                                    </li>
+                                    <li>
+                                        <b>Full binary tree</b>:
+                                        (sometimes proper
+                                        binary tree or
+                                        2-tree) is a tree in
+                                        which every node
+                                        other than the leaf
+                                        nodes has two
+                                        children.
+                                    </li>
+                                    <li>
+                                        <b>Complete binary
+                                        tree</b>: is a
+                                        binary tree in which
+                                        every level, except
+                                        possibly the last,
+                                        is completely
+                                        filled, and all
+                                        nodes are as far
+                                        left as possible.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="Properties">
+                    <div class="longt">
+                        <h2 class="hlongt">BST properties</h2>
+                    </div>
+                    <div class="art req" title="Video: BST Property">
+                        <div class="longt">
+                            <h2 class="hlongt">Demonstration of Properties</h2>
+                        </div>
+                        <div class="description">
+                            <p>A video to describe various properties of a BST. Last 20 seconds discuss uses of BST</p>
+                        </div>
+                    </div>
+                    <div class="art req" title="Picture: BST Property">
+                        <div class="longt">
+                            <h2 class="hlongt">Structure of a node in a BST</h2>
+                        </div>
+                        <div class="art-body">
+                            <img src="./img/structure.png" alt="node structure of a BST">  
+                        </div>
+                    </div>
+                    <div class="art txt" title="BST Property">
+                        <div class="longt">
+                            <h2 class="hlongt">Binary Search Tree Property</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Stored keys must satisfy the binary search tree property.
+                                <ul>
+                                    <li>y in left subtree of x, then key[y] &lt; key[x].</li>
+                                    <li>y in right subtree of x, then key[y] &gt; key[x].</li>
+                                    <li>The left and right subtree each must also be a binary search tree.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art req" title="Picture: BST Node Structure">
+                        <div class="longt">
+                            <h2 class="hlongt">Structure of a node in a BST</h2>
+                        </div>
+                        <div class="art-body">
+                            <img src="./img/structure.png" alt="node structure of a BST">  
+                        </div>
+                    </div>
+                    <div class="art txt" title="BST Implementation">
+                        <div class="longt">
+                            <h2 class="hlongt">Implementation of a Binary Search Tree using a composite data structure</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                Represented by a linked data structure of nodes.
+                                <br>root(T) points to the root of tree T.
+                                <br>
+                                <ul>
+                                    Each node contains fields:  
+                                    <li>key</li>
+                                    <li>left – pointer to left child: root of left subtree.</li>
+                                    <li>right – pointer to right child : root of right subtree.</li>    
+                                    <li>p – pointer to parent. p[root[T]] = NIL (optional).</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="BST Insert Demo">
+                    <div class="longt">
+                        <h2 class="hlongt">BST Insert Demo</h2>
+                    </div>
+                    <div class="art req" title="BST Insert Demo">
+                        <div class="longt">
+                            <h2 class="hlongt">BST Insert Demo</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="BST Search Demo">
+                    <div class="longt">
+                        <h2 class="hlongt">BST Search Demo</h2>
+                    </div>
+                    <div class="art req" title="BST Search Demo">
+                        <div class="longt">
+                            <h2 class="hlongt">BST Search Demo</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="BST Search Practice">
+                    <div class="longt">
+                        <h2 class="hlongt">BST Search Practice</h2>
+                    </div>
+                    <div class="art req" title="BST Search Practice">
+                        <div class="longt">
+                            <h2 class="hlongt">BST Search Practice</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="BST Delete Demo">
+                    <div class="longt">
+                        <h2 class="hlongt">BST Delete Demo</h2>
+                    </div>
+                    <div class="art req" title="BST Delete Demo">
+                        <div class="longt">
+                            <h2 class="hlongt">BST Delete Demo</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task" title="BST Delete Exercise">
+                    <div class="longt">
+                        <h2 class="hlongt">BST Delete Exercise</h2>
+                    </div>
+                    <div class="art req" title="BST Delete Exercise">
+                        <div class="longt">
+                            <h2 class="hlongt">BST Delete Exercise</h2>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="task" title="Uses/Relationships">
+                    <div class="longt">
+                        <h2 class="hlongt">Uses and relationship of BST with other data structures</h2>
+                    </div>
+                    <div class="art txt" title="Uses of BST">
+                        <div class="longt">
+                            <h2 class="hlongt">Uses</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Can be used to build:
+                                <ul>
+                                    <li><a href="https://en.wikipedia.org/wiki/Associative_array">Dictionaries</a>:
+                                        <img src="http://10.4.12.203/bst/artefacts/build/code/static/img/hashtable.png" alt="Hash tables using BST"><br>A dictionary is a set of unordered key, value pairs. In a dictionary, the keys must be unique and are stored in an unordered manner.</li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Priority_queue">Priority Queues</a>:
+                                            <img src="http://10.4.12.203/bst/artefacts/build/code/static/img/binaryheap.png" alt="Priority queue using a BST"><br>Priority Queue is similar to queue where we insert an element from the back and remove an element from front, but with one difference, that is the logical order of elements in the priority queue depends on the priority of the elements. The element with highest priority will be moved to the front of the queue and one with lowest priority will move to the back of the queue.</li>
+                                            <li><a href="http://exp.vlabs.ac.in/experiments/postfix/story-board/concrete.html">infix-postfix expressions</a></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Relationships of BST">
+                        <div class="longt">
+                            <h2 class="hlongt">Relationships of BST with other data structures</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ul>
+                                    <li>
+                                        For a <b>binary tree</b> to be a binary search tree, the data of all the nodes in the left sub-tree of the root node should be &leqslant; the data of the root. 
+                                        The data of all the nodes in the right subtree of the root node should be &gt; the data of the root.
+                                    </li>
+                                    <li><b>Arrays: Linear traversal v/s Binary Serach Tree traversal</b><br>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Binary_search_tree_example.gif" alt="Linear Array vs BST">
+                                    </li>
+                                </ul> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="task" title="Quiz: Introduction">
+                    <div class="longt">
+                        <h2 class="hlongt">Quiz on Introduction</h2>
+                    </div>
+                    <div class="art txt" title="Question 1">
+                        <div class="longt">
+                            <h2 class="hlongt">Q1:A binary search tree is used to locate the number 43. Which of the following probe sequences are possible?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>61, 52, 14, 17, 40, 43</li>
+                                    <li>10, 65, 31, 48, 37, 43</li>
+                                    <li>81, 61, 52, 14, 41, 43</li>
+                                    <li>17, 77, 27, 66, 18, 43</li>
+                                </ol>
+                                Inorder Traversal
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 2">
+                        <div class="longt">
+                            <h2 class="hlongt">Q2:The following numbers are inserted into an empty binary search tree in the given order: 10, 1, 3, 5, 15, 12, 16. What is the height of the binary search tree (the height is the maximum distance of a leaf node from the root)?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>6</li>
+                                </ol>
+                                Pointer is just the address value where the variable is stored. To get the address value, we use "->" its just an representation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lu" title="Operations on BST">
+                <div class="longt">
+                    <h2 class="hlongt">Operations on BST</h2>    
+                </div>
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>15 minutes</p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="List of Operations">
+                        <div class="longt">
+                            <h2 class="hlongt">List of Operations</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                Following are the operations that can be performed on a BST:
+                                <ul>
+                                    <li>Insertion</li>
+                                    <li>Traversal</li>
+                                    <li>Sorting/Validation</li>
+                                    <li>Deletion</li>
+                                    <br>
+                                    and we will explore each one of these operations in the upcoming module.
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="task" title="Insertion">
+                    <div class="longt">
+                        <h2 class="hlongt">Insertion of a node into Binary Search Tree</h2>
+                    </div>
+                    <div class="art req" title="Video: Insertion">
+                        <div class="longt">
+                            <h2 class="hlongt">Video for insertion</h2>
+                        </div>
+                        <div class="description">
+                            <p>A video which helps the
+                               learner to visualize the
+                               operation using the below
+                               interavtive module.
+                               <br>also calculation of time
+                               and space complexity of the
+                               operation.
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="art txt" title="Insertion Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Inserting a new node into a BST</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <li>Start from root.</li>
+                                <li>Compare the inserting
+                                    element with root and if
+                                    it's lesser than root,
+                                    then recurse for left,
+                                    else recurse for right.
+                                </li>
+                                <li>After reaching the end,
+                                    just insert that node at
+                                    left(if less than
+                                    current), else right.
+                                </li>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="art req" title="BST Insertion">
+                        <div class="longt">
+                            <h2 class="hlongt">Interactive module for insertion</h2>
+                        </div>
+                        <div class="description">
+                            <p>
+                                A practice module which
+                                helps the learner to
+                                visualize the operation. 
+                                <br>Learner can input a
+                                random number and then go
+                                step by step from the root
+                                node towards the correct
+                                location for the new leaf
+                                node. making a choice for
+                                left and right at every node
+                                along the way.
+                                <br>Also gives them an
+                                insight for the calculation
+                                of time and space complexity
+                                of the operation.
+                            </p> 
+                        </div>
+                    </div>
+                </div>                   
+                <div class="task" title="Traversal">
+                    <div class="longt">
+                        <h2 class="hlongt">Traversal of a Binary Search Tree</h2>
+                    </div>
+                    <div class="art req" title="Video: Traversal">
+                        <div class="longt">
+                            <h2 class="hlongt">Video for traversal</h2>
+                        </div>
+                        <div class="description">
+                            <p>A video which helps the
+                               learner to visualize the
+                               operation using the below
+                               interavtive module.
+                               <br>also calculation of time
+                               and space complexity of the
+                               operation.
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="art txt" title="Traversal Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Traversing a Binary Search Tree</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                There are mainly three types of tree traversals:
+                                <ul>
+                                    <li>
+                                        Pre-order traversal:<br>
+                                        In this traversal technique the traversal order is root-left-right i.e.
+                                        <ul>
+                                            <li>Process data of root node</li>
+                                            <li>Traverse left subtree completely</li>
+                                            <li>Then, traverse right subtree</li>
+                                        </ul> 
+                                    </li>
+                                    <li>
+                                        Post-order traversal:<br>
+                                        In this traversal technique the traversal order is left-right-root i.e.
+                                        <ul>
+                                            <li>Process data of left subtree</li>
+                                            <li>Traverse right subtree</li>
+                                            <li>Then, traverse root node</li>
+                                        </ul> 
+                                    </li>
+                                    <li>
+                                        In-order traversal:<br>
+                                        In this traversal technique the traversal order is left-root-right i.e.
+                                        <ul>
+                                            <li>First process left subtree (before processing root node)</li>
+                                            <li>Traverse right subtree</li>
+                                            <li>Then, traverse root node</li>
+                                        </ul> 
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art req" title="BST Traversal">
+                        <div class="longt">
+                            <h2 class="hlongt">Interactive module for traversal</h2>
+                        </div>
+                        <div class="description">
+                            <p>
+                                A practice module which
+                                helps the learner to
+                                visualize the operation. 
+                                <br>Learner can select any
+                                one of the three types of
+                                traversal and the module
+                                will show the BST getting
+                                traversed in that order
+                                hence clearing the
+                                difference between the three
+                                types of traversals.
+                                <br>Also gives them an
+                                insight for the calculation
+                                of time and space complexity
+                                of the operation.
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="task" title="Exercise: Sort/Validate">
+                    <div class="longt">
+                        <h2 class="hlongt">Using inorder traversal for sorting of keys and validation of BST</h2>
+                    </div>
+                    
+                    <div class="art req" title="Video: Sorting">
+                        <div class="longt">
+                            <h2 class="hlongt">Video for Sorting</h2>
+                        </div>
+                        <div class="description">
+                            <p>A video to describe how
+                               sorting an array is achieved
+                               using an inorder traversal of
+                               a BST. and how this property
+                               can be used to validate a
+                               BST.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="art txt" title="Sorting Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Sorting algorithm based on BST: Tree Sort</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Tree sort is a sorting
+                               algorithm that is based on
+                               Binary Search Tree data
+                               structure. It first
+                               constructs a binary search
+                               tree from the elements of the
+                               input list or array and then
+                               performs an in-order
+                               traversal on the constructed
+                               binary search tree to get the
+                               elements in sorted order. 
+                            </p>
+                            <h3 class="hlongt">Algorithm:</h3>
+                            <ul>
+                                <li>Take the elements input in an array.</li>
+                                <li>Construct a Binary
+                                    search tree by inserting
+                                    data items from the
+                                    array into the binary
+                                    search tree.
+                                </li>
+                                <li>Perform in-order traversal on the tree to get the elements in sorted order.
+                                    <ul>
+                                        <li>Process the left subtree.</li>
+                                        <li>Use the root key value.</li>
+                                        <li>Process the right subtree.</li>
+                                        <li>If at any stage
+                                            left or right
+                                            subtree is a
+                                            single node, use
+                                            the key value to
+                                            process it.
+                                        </li>
+                                        <li>Repeat the steps recursively to finish the inorder traversal.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>The result is a sorted arrangement of given key values.</p>
+                        </div>
+                    </div>
+                    <!-- restructuring the flowchart to make it smoother and more conventional -->
+                    <div class="art req" title="Picture: BST sort">
+                        <div class="longt">
+                            <h2 class="hlongt">A flowchart for printing every element in a binary search tree in an ascending order</h2>
+                        </div>
+                        <div class="art-body">
+                            <img src="./img/treesort.png" alt="inorder traversal of a BST">  
+                        </div>
+                    </div>
+                    <div class="art req" title="Exercise: BST Sort">
+                        <div class="longt">
+                            <h2 class="hlongt">Exercise on Traversal: Sorting</h2>
+                        </div>
+                        <div class="description">
+                            <p>An interactive module where
+                               the learner can apply his/her
+                               knowledge of BSTs to
+                               implement an inorder sort of
+                               a given BST.<br><br>
+                               Redesign the artefact to
+                               include multiple types of
+                               questions randomly selected
+                               and random data in each.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="task" title="Deletion">
+                    <div class="longt">
+                        <h2 class="hlongt">Deletion of an element from a Binary Search Tree</h2>
+                    </div>
+                    <div class="art req" title="Video: Deletion">
+                        <div class="longt">
+                            <h2 class="hlongt">Video for deletion</h2>
+                        </div>
+                        <div class="description">
+                            <p>A video which helps the
+                               learner to visualize the
+                               operation using the below
+                               interavtive module.
+                               <br>also calculation of time
+                               and space complexity of the
+                               operation.
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="art txt" title="Deletion Algorithm">
+                        <div class="longt">
+                            <h2 class="hlongt">Deleting a node from a BST</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                For deletion, we come across
+                                three different cases
+                                depending in the location of
+                                the node and its aadjacent
+                                node.  let x be the key of
+                                the node to be deleted, then
+                                deletion works as follows.
+                                <ol>
+                                    <li>Case 1:<br>if x has no children, then remove x</li>
+                                    <li>Case 2:<br>if x has one child, then make p[x] (parent pointer of the node) point to child</li>
+                                    <li>Case 3:<br>if x has two children (subtrees), then swap x with its <a href="https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/">successor</a> perform case 1 or case 2 to delete it</li>
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="art req" title="BST Deletion">
+                        <div class="longt">
+                            <h2 class="hlongt">Interactive module for deletion</h2>
+                        </div>
+                        <div class="description">
+                            <p>
+                                A practice module which
+                                helps the learner to
+                                visualize the operation. 
+                                <br>Learner can select a
+                                node to delete and then
+                                choose from the 3 operations
+                                corresponding to three
+                                cases. until the node
+                                eventually gets deleted. 
+                                <br>Also gives them an
+                                insight for the calculation
+                                of time and space complexity
+                                of the operation.
+                            </p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="task" title="Quiz: Operations/Applications">
+                    <div class="longt">
+                        <h2 class="hlongt">Quiz on Operations and Applications</h2>
+                    </div>
+                    <div class="art txt" title="Question 1">
+                        <div class="longt">
+                            <h2 class="hlongt">Q1:The
+                                following numbers are
+                                inserted into an empty
+                                binary search tree in the
+                                given order: 10, 1, 3, 5,
+                                15, 12, 16. What is the
+                                height of the binary search
+                                tree (the height is the
+                                maximum distance of a leaf
+                                node from the root)?
+                            </h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>6</li>
+                                </ol>
+                                <img src="http://10.4.12.203/bst/artefacts/build/code/static/img/sol1.png" alt="inorder traversal of a BST">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 2">
+                        <div class="longt">
+                            <h2 class="hlongt">Q2:Which of the following cannot generate the full binary tree?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>Inorder and Preorder</li>
+                                    <li>Inorder and Postorder</li>
+                                    <li>Preorder and Postorder</li>
+                                    <li>None of the above</li>
+                                </ol>
+                                To generate a binary tree,
+                                two traversals are necessary
+                                and one of them must be
+                                inorder. But, a full binary
+                                tree can be generated from
+                                preorder and postorder
+                                traversals.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 3">
+                        <div class="longt">
+                            <h2 class="hlongt">Q3:Which of the following traversal outputs the data in sorted order in a BST?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>Inorder</li>
+                                    <li>Postorder</li>
+                                    <li>Preorder</li>
+                                    <li>Level order</li>
+                                </ol>
+                                Inorder traversal of a BST outputs data in sorted order.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 4">
+                        <div class="longt">
+                            <h2 class="hlongt">Q4:What are
+                            the worst-case complexities of
+                            insertion and deletion of a key
+                            in a binary search tree?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>Θ(logn) for both insertion and deletion</li>
+                                    <li>Θ(n) for both insertion and deletion</li>
+                                    <li>Θ(n) for insertion and Θ(logn) for deletion</li>
+                                    <li>Θ(logn) for insertion and Θ(n) for deletion</li>
+                                </ol>
+                                The time taken by search,
+                                insert and delete on a BST
+                                is always proportional to
+                                height of BST. Height may
+                                become O(n) in worst case.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 5">
+                        <div class="longt">
+                            <h2 class="hlongt">Q5:We are
+                                given a set of n distinct
+                                elements and an unlabeled
+                                binary tree with n nodes. In
+                                how many ways can we
+                                populate the tree with the
+                                given set so that it becomes
+                                a binary search tree?
+                            </h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>0</li>
+                                    <li>1</li>
+                                    <li>n!</li>
+                                    <li>(1/(n+1)).2nCn</li>
+                                </ol>
+                                There is only one way. The
+                                minimum value has to go to
+                                the leftmost node and the
+                                maximum value to the
+                                rightmost node. Recursively,
+                                we can define for other
+                                nodes.
+                            </p>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+            <div class="lu" title="Post Test">
+                <div class="longt">
+                    <h2 class="hlongt">Post Test of the Experiment</h2>    
+                </div>
+                
+                <div class="preamble">
+                    <div class="art txt" title="Estimation">
+                        <div class="longt">
+                            <h2 class="hlongt">Estimated Time</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>10 minutes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="art txt" title="Introduction">
+                        <div class="longt">
+                            <h2 class="hlongt">Introduction to Post Test of the Experiment</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>Post Test includes questions
+                               on concepts from the entire
+                               experiment. Read the
+                               questions in the quiz section
+                               and select the correct option
+                               from the ones
+                               provided. Please note that
+                               some questions may have more
+                               than one correct response.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="task" title="Post Test Quiz">
+                    <div class="longt">
+                        <h2 class="hlongt">Post Test Quiz of the Experiment</h2>
+                    </div>
+                    <div class="art txt" title="Question 1">
+                        <div class="longt">
+                            <h2 class="hlongt">Q1:Which of
+                            the following traversals is
+                            sufficient to construct BST from
+                            given traversals?
+                                <ol>
+                                    <li>Inorder</li>
+                                    <li>Preorder</li>
+                                    <li>Postorder</li>
+                                </ol>
+                            </h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>Any one of the given three traversals is sufficient</li>
+                                    <li>Either 2 or 3 is sufficient</li>
+                                    <li>2 and 3</li>
+                                    <li>1 and 3</li>
+                                </ol>
+                                When we know either preorder
+                                or postorder traversal, we
+                                can construct the BST. Note
+                                that we can always sort the
+                                given traversal and get the
+                                inorder traversal. Inorder
+                                traversal of BST is always
+                                sorted.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 2">
+                        <div class="longt">
+                            <h2 class="hlongt">Suppose that
+                            we have numbers between 1 and
+                            100 in a binary search tree and
+                            want to search for the number
+                            55. Which of the following
+                            sequences CANNOT be the sequence
+                            of nodes examined?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>{10, 75, 64, 43, 60, 57, 55}</li>
+                                    <li>{90, 12, 68, 34, 62, 45, 55}</li>
+                                    <li>{9, 85, 47, 68, 43, 57, 55}</li>
+                                    <li>{79, 14, 72, 56, 16, 53, 55}</li>
+                                </ol>
+                                In BST, the node on the
+                                right side of parent number
+                                should be greater than it,
+                                but in option C, 43 appears
+                                after 47, which is wrong.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 3">
+                        <div class="longt">
+                            <h2 class="hlongt">Q3:How many distinct binary search trees can be created out of 4 distinct keys?</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>5</li>
+                                    <li>14</li>
+                                    <li>24</li>
+                                    <li>35</li>
+                                </ol>
+                                Distinct binary search trees
+                                that can be created out of 4
+                                distinct keys can be found
+                                out using the Catalon
+                                number.
+                        </br>Catalon number = (2n)!/(n! * (n+1)!)
+                        </br>Here n = 4,
+                        </br>Number of distinct BST’s = (4 x 2)! / (4! x 5!) = 14
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 4">
+                        <div class="longt">
+                            <h2 class="hlongt">Q4:While
+                            inserting the elements 71, 65,
+                            84, 69, 67, 83 in an empty
+                            binary search tree (BST) in the
+                            sequence shown, the element in
+                            the lowest level is</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>65</li>
+                                    <li>67</li>
+                                    <li>69</li>
+                                    <li>83</li>
+                                </ol>
+                                When we know either preorder
+                                or postorder traversal, we
+                                can construct the BST. Note
+                                that we can always sort the
+                                given traversal and get the
+                                inorder traversal. Inorder
+                                traversal of BST is always
+                                sorted.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="art txt" title="Question 5">
+                        <div class="longt">
+                            <h2 class="hlongt">Q5:Access
+                            time of the symbolic table will
+                            be logarithmic if it is
+                            implemented by</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>
+                                <ol>
+                                    <li>Linear list</li>
+                                    <li>Search tree</li>
+                                    <li>Hash table</li>
+                                    <li>Self organization list</li>
+                                </ol>
+                                Self explanatory
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lu" title="Feedback">
+                <div class="longt">
+                    <h2 class="hlongt">Feedback of the Experiment</h2>    
+                </div>
+                
+                <div class="preamble">
+                    <div class="art txt" title="Feedback Form">
+                        <div class="longt">
+                            <h2 class="hlongt">Feedback Form of the Experiment</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>The experiment ends here,
+                               thanks for participating!
+                               Please fill up the form.
+                            </p>
+                        </div>
+                    </div>            
+                </div>   
+            </div>
+            
+            <div class="lu" title="Further Readings/References">
+                <div class="longt">
+                    <h2 class="hlongt">Further Readings of the Experiment</h2>    
+                </div>
+                
+                <div class="preamble">
+                    <div class="art txt" title="Explore">
+                        <div class="longt">
+                            <h2 class="hlongt">Explore More About Binary Search Tree</h2>
+                        </div>
+                        <div class="art-body">
+                            <p>You can explore more about
+                               Binary Search Tree Experiment
+                               through following resources:
+                            </p><br>
+                            <p>
+                                <h4>Animations</h4>
+                                <ul>
+                                    <li><a href="https://www.mathwarehouse.com/programming/gifs/binary-search-tree.php#binary-srch-tree-degrad">Degredation</a></li>
+                                    <li><a href="https://www.mathwarehouse.com/programming/gifs/binary-search-tree.php#binary-search-tree-insertion-node">Insertion of a node into Tree</a></li>
+                                    <li><a href="https://www.mathwarehouse.com/programming/gifs/binary-search-tree.php#binary-search-tree-vs-sorted-array">Comparing Binary Search Tree vs Sorted Array</a></li>
+                                    <li><a href="https://www.mathwarehouse.com/programming/gifs/binary-search-tree.php#-code-gif">Optimal Binary Search Tree from Sorted Array</a></li>
+                                </ul>
+                            </p>    
+                            <p>
+                                <h4>Other resources</h4>
+                                <ul>
+                                    <li><a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/">Geeks for Geeks</a></li>
+                                    <li><a href="https://www.hackerrank.com/topics/binary-trees-and-binary-search-trees">HackerRank</a></li>
+                                    <li><a href="https://en.wikipedia.org/wiki/Binary_search_tree">Wikipedia</a></li>
+                                    <li><a href="https://algs4.cs.princeton.edu/32bst/">Princeton course</a></li>
+                                </ul>
+                            </p>
+                            <p>
+                                <h4>Credits:</h4>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/watch?v=_1ybxs60-Sc&t=18s">Francis Joseph Serina</a>: Pointers and structs</li>
+                                    <li><a href="https://www.youtube.com/watch?v=oSWTXtMglKE">HackerRank: Gayle Laakmann McDowell</a>: Introduction to Binary Search Tree and Prerequisite: Binary Tree</li>
+                                    <li><a href="https://www.youtube.com/watch?v=__vX2sjlpXU&">Michael Sambol</a></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>          
+            </div>
+        </div>
+        <script type="text/javascript" src="./js/loader.js"></script>
+    </body>
+</html>
